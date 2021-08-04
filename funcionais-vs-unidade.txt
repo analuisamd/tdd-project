@@ -1,0 +1,5 @@
+Diferenças simples entre Testes Funcionais e Testes de Unidade
+
+1 - Nos testes funcionais o sistema é testado de forma integrada, podendo usar dependências externas, diferente dos testes de unidade onde é testado uma parte isolada do código, como uma função ou uma classe.
+
+2. Os testes funionais possuem a perspectiva do usuário, já os testes de unidade possuem perspectiva do desenvolvedor e são mais rápidos e tem um custo menor, por isso são utilizados com mais frequência.
