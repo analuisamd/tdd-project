@@ -3,14 +3,10 @@ from lists.models import Item
 
 class HomePageTest(TestCase):
 
+
     def test_uses_home_template(self):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home.html')
-
-
-    def test_only_saves_items_when_necessary(self):
-        self.client.get('/')
-        self.assertEqual(Item.objects.count(), 0)
 
 class ItemModelTest(TestCase):
 
@@ -32,6 +28,9 @@ class ItemModelTest(TestCase):
         self.assertEqual(second_saved_item.text, 'O segundo item')
 
 class ListViewTest(TestCase):
+    def test_uses_list_template(self):
+        response = self.client.get('/lists/the-only-list-in-the-world/')
+        self.assertTemplateUsed(response, 'list.html')
 
     def test_displays_all_items(self):
         Item.objects.create(text='itemey 1')
